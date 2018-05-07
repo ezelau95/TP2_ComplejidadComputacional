@@ -1,10 +1,10 @@
 package polinomios;
 /*Falta revisar otras formas de obtener los coeficientes del desarrollo completo del binomio.
- * Técnicas con y sin memorizaciòn*/
+ * TÃ©cnicas con y sin memorizaciÃ³n*/
 
 public class BinomioDeNewton {
 
-	//considerando la fórmula (ax+b)^n
+	//considerando la fÃ³rmula (ax+b)^n
 	private int a;
 	private int b;
 	private int n;

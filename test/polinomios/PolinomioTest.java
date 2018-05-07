@@ -14,20 +14,29 @@ public class PolinomioTest {
 		pol1 = new Polinomio(new double[] {1, 1, 1, 1, 1});
 		pol2 = new Polinomio(new double[] {2, 2, 2, 2, 2});
 	}
-	
+
+	//grado 4: 1x4 + 1x3 + 1x2 + 1x1 + 1
+	//		   0     1     2     3     4
 	@Test
 	public void evaluarMSucesivasTest(){
 		double resultado = pol1.evaluarMSucesivas(1);
-		Assert.assertEquals(5, resultado, 0);
+		Assert.assertEquals(5, resultado, 2);
 		
 		resultado = pol1.evaluarMSucesivas(2);
-		Assert.assertEquals(31, resultado, 0);
-		
+		Assert.assertEquals(31, resultado, 2);
+
+		resultado = pol1.evaluarMSucesivas(3);
+		double resultadoEsperado = Math.pow(3, 4) + Math.pow(3, 3) + Math.pow(3, 2) + Math.pow(3, 1) + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
+
+		resultado = pol2.evaluarMSucesivas(3);
+		resultadoEsperado = Math.pow(3, 4)*2 + Math.pow(3, 3)*2 + Math.pow(3, 2)*2+ Math.pow(3, 1)*2 + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
 	}
 	
 	@Test
-	public void evaluarHorner(){
-		double resultado = pol1.horner(1);
+	public void evaluarHornerTest(){
+		double resultado = pol1.evaluarHorner(1);
 		Assert.assertEquals(5, resultado, 0);
 	}
 }
