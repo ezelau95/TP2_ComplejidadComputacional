@@ -1,5 +1,7 @@
 package polinomios;
 
+import java.util.Arrays;
+
 public class Polinomio {
 	private int grado;
 	private double [] coeficientes;
@@ -38,4 +40,29 @@ public class Polinomio {
             result = coeficientes[i] + (x * result);
         return result;
     }
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Polinomio polinomio = (Polinomio) o;
+
+		if (grado != polinomio.grado) return false;
+		return Arrays.equals(coeficientes, polinomio.coeficientes);
+	}
+
+	@Override
+	public int hashCode() {
+		int result = grado;
+		result = 31 * result + Arrays.hashCode(coeficientes);
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Polinomio{" +
+				"coeficientes=" + Arrays.toString(coeficientes) +
+				'}';
+	}
 }
