@@ -13,4 +13,13 @@ public class Utilitario {
         }
         return f;
     }
+
+    public static double potencia(double x, int n) {
+        if (n > 1)
+            return x * potencia(x, n - 1);
+        else if (n == 1)
+            return x;
+        else
+            return 1;
+    }
 }

@@ -16,7 +16,7 @@ public class Polinomio {
 	//grado 4: 1x4 + 1x3 + 1x2 + 1x1 + 1
 	//		   0     1     2     3     4
 	// x = 1 :
-	public double evaluarMSucesivas(double x) {
+    public double evaluarMSucesivas(double x) {
 
 		double resultado = 0;
 		double aux;
@@ -28,8 +28,8 @@ public class Polinomio {
 			resultado += aux * coeficientes[i];
 		}
 
-		return resultado;
-	}
+        return resultado;
+    }
 
 	/**
 	 * Evalua el polinomio de manera recursiva Sin considerar si el exponente es par
@@ -42,18 +42,9 @@ public class Polinomio {
 	public double evaluarRecursiva(double x) {
 		double resultado = 0;
 		for (int i = 0; i < this.grado; i++) {
-			resultado += this.coeficientes[i] * potencia(x, this.grado - i);
+			resultado += this.coeficientes[i] * Utilitario.potencia(x, this.grado - i);
 		}
 		return resultado;
-	}
-
-	private double potencia(double x, int n) {
-		if (n > 1)
-			return x * potencia(x, n - 1);
-		else if (n == 1)
-			return x;
-		else
-			return 1;
 	}
 
 	/**
