@@ -32,7 +32,7 @@ public class Polinomio {
 
 	/**
 	 * Evalua el polinomio de manera recursiva Sin considerar si el exponente es par
-	 * o impar
+	 * o impar. Complejidad O(f(n^2*2^n))
 	 * 
 	 * @param x
 	 *            numero con el cual se va a evaluar el polinomio
@@ -57,7 +57,7 @@ public class Polinomio {
 
 	/**
 	 * Evalua el polinomio de manera recursiva considerando si el exponente es par o
-	 * impar
+	 * impar.Complejidad O(f(n^2*2^n*log*n))
 	 * 
 	 * @param x
 	 *            numero con el cual se va a evaluar el polinomio
