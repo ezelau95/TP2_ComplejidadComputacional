@@ -9,12 +9,23 @@ public class BinomioDeNewton {
 	private int b;
 	private int n;
 
+	/**
+	 * Constructor con parametros
+	 * @param a <code>int</code>
+	 * @param b <code>int</code>
+	 * @param n <code>int</code>
+	 */
 	public BinomioDeNewton(int a, int b, int n) {
 		this.a = a;
 		this.b = b;
 		this.n = n;
 	}
 	
+	/**
+	 * Obtener el termino k del polinomio
+	 * @param k <code>int</code> el termino a obtener
+	 * @return termino enviado como parametro
+	 */
 	public int terminoK(int k) {
 		return (int) (Utilitario.combinatoria(n, k) * Math.pow(a, k) * Math.pow(b, n - k));
 	}
@@ -27,4 +38,13 @@ public class BinomioDeNewton {
 			}
 			return new Polinomio(coeficientes);
 		}
+
+	/**
+	 * 
+	 * @return n <code>int</code>
+	 */
+	public int getN() {
+		return n;
+	}
+	
 	}
