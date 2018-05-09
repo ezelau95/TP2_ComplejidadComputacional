@@ -5,8 +5,9 @@ public class Polinomio {
 	private double [] coeficientes;
 	
 	public Polinomio(double[] c) {
-		coeficientes = c;
-		grado = c.length;
+		
+			coeficientes = c;
+		grado = c.length-1;
 	}
 	
 	//La posicion 0 del arreglo de coeficientes contiene el coeficiente de grado n y la posicion n contiene al termino independiente.
@@ -33,10 +34,34 @@ public class Polinomio {
 		return 0;
 	}
 	
+    /**
+     *Resuelve un polinomio utilizando la funcion <i>pow</i> de la biblioteca Math. <br>
+     *
+     * Complejidad O(n)
+     *
+     * @param x  .
+     */
+	public double evaluarPow(double x) {
+		double resultado = 0;
+		for (int i = 0; i <= this.grado; i++)
+			resultado += this.coeficientes[i] * Math.pow(x, this.grado - i);
+		System.out.println(resultado);
+		return resultado;
+	}
+	
+	 /**
+	 *Resuelve un polinomio aplicando el algoritmo de Horner de analisis numerico<br>
+     *
+     * Complejidad O(n)
+     *
+     * @param x  .
+     */
 	public double horner(double x) {
-        double result = 0;
-        for (int i = grado - 1; i >= 0; i--)
-            result = coeficientes[i] + (x * result);
-        return result;
+		double resultado = this.coeficientes[0];
+		for (int i = 1; i <= this.grado; i++) {
+			resultado = this.coeficientes[i] + resultado * x;
+		}
+		return resultado;
+       
     }
 }

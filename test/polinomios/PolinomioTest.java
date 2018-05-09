@@ -8,6 +8,7 @@ public class PolinomioTest {
 	private Polinomio pol1;
 	private Polinomio pol2;
 	private Polinomio pol3;
+	private int x=5;
 	
 	@Before
 	public void setUp() {
@@ -24,10 +25,18 @@ public class PolinomioTest {
 		Assert.assertEquals(31, resultado, 0);
 		
 	}
+	@Test
+	public void testPow() {
+		
+		double resultado = this.pol1.evaluarPow(x);
+		
+		Assert.assertEquals(781, resultado, 0);
+	
+	}
 	
 	@Test
 	public void evaluarHorner(){
 		double resultado = pol1.horner(1);
-		Assert.assertEquals(5, resultado, 0);
+		Assert.assertEquals(781, resultado, 0);
 	}
 }
