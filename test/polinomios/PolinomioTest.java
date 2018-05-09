@@ -30,13 +30,13 @@ public class PolinomioTest {
 		
 		double resultado = this.pol1.evaluarPow(x);
 		
-		Assert.assertEquals(781, resultado, 0);
+		Assert.assertEquals(781.0, resultado, 0);
 	
 	}
 	
 	@Test
 	public void evaluarHorner(){
-		double resultado = pol1.horner(1);
-		Assert.assertEquals(781, resultado, 0);
+		double resultado = pol1.horner(x);
+		Assert.assertEquals(781.0, resultado, 0);
 	}
 }

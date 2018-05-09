@@ -11,6 +11,7 @@ public class Main {
 		polinomio.evaluarPow(5);
 	
 		System.out.println(polinomio.evaluarPow(5));
+		System.out.println(polinomio.horner(5));
 	}
 
 }
