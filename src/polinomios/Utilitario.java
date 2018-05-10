@@ -2,9 +2,17 @@ package polinomios;
 
 public class Utilitario {
 
-    public static int combinatoria(int m, int n) {
-        return factorial(m) / (factorial(m - n) * factorial(n));
+    public static int combinatoriaRecursiva(int n, int k) {
+    	 if (n >= 0 && k == 0) return 1;
+         if (k >= 0 && n == 0) return 0;
+         return combinatoriaRecursiva(n - 1, k - 1) + combinatoriaRecursiva(n - 1, k);
     }
+    
+    public static int combinatoria(int n, int k) {
+   	 	if (n >= 0 && k == 0) return 1;
+        if (k >= 0 && n == 0) return 0;
+        return factorial(n) / (factorial(n - k) * factorial(k));
+   }
 
     public static int factorial(int n) {
         int f = 1;

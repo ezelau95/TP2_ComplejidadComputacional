@@ -22,7 +22,19 @@ public class BinomioDeNewton {
 	}
 	
 	/**
-	 * Obtener el termino k del polinomio
+	 * Obtener el termino k del polinomio utilizando el calculo combinatorio recursivo
+	 * 
+	 * Complejidad
+	 * 
+	 * @param k <code>int</code> el termino a obtener
+	 * @return termino enviado como parametro
+	 */
+	public int terminoKRecursivo(int k) {
+		return (int) (Utilitario.combinatoriaRecursiva(n, k) * Math.pow(a, k) * Math.pow(b, n - k));
+	}
+	
+	/**
+	 * Obtener el termino k del polinomio utilizando el calculo combinatorio iterativo
 	 * @param k <code>int</code> el termino a obtener
 	 * @return termino enviado como parametro
 	 */
@@ -30,6 +42,13 @@ public class BinomioDeNewton {
 		return (int) (Utilitario.combinatoria(n, k) * Math.pow(a, k) * Math.pow(b, n - k));
 	}
 	
+	/**
+	 * Obtener el polinomio del desarrollo completo de un binomio de newton, el calculo combinatorio iterativo
+	 * 
+	 * Complejidad 
+	 * 
+	 * @return polinomio resultante
+	 */
 	public Polinomio desarrolloCompleto() {
 
 			double[] coeficientes = new double[n + 1];
@@ -37,7 +56,23 @@ public class BinomioDeNewton {
 				coeficientes[i] = Utilitario.combinatoria(n, i) * Math.pow(a, n - i) * Math.pow(b, i);
 			}
 			return new Polinomio(coeficientes);
-		}
+	}
+	
+	/**
+	 * Obtener el polinomio del desarrollo completo de un binomio de newton, el calculo combinatorio recursivo
+	 * 
+	 * Complejidad 
+	 * 
+	 * @return polinomio resultante
+	 */
+	public Polinomio desarrolloCompletoRecursivo() {
+
+			double[] coeficientes = new double[n + 1];
+			for (int i = 0; i < coeficientes.length; i++) {
+				coeficientes[i] = Utilitario.combinatoriaRecursiva(n, i) * Math.pow(a, n - i) * Math.pow(b, i);
+			}
+			return new Polinomio(coeficientes);
+	}
 
 	/**
 	 * 

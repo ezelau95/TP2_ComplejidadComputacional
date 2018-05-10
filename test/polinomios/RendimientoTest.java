@@ -351,7 +351,7 @@ public class RendimientoTest {
 		long start = 0L;
 		long end = 0L;
 
-		// Termino K
+		// Termino K (ITERATIVO)
 		
 		termino = r.nextInt(100 - 1);
 		start = System.currentTimeMillis();
@@ -420,8 +420,78 @@ public class RendimientoTest {
 		System.out.println("terminoK() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
 
 		System.out.println();
+		
+		// Termino K (RECURSIVO)
+		
+		termino = r.nextInt(100 - 1);
+		start = System.currentTimeMillis();
+		binomioNewton1.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
 
-		// Desarrollo completo
+		termino = r.nextInt(500 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton2.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(750 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton3.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(1000 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton4.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(5000 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton5.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(7000 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton6.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(10000 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton7.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(50000 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton8.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(100000 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton9.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(500000 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton10.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		termino = r.nextInt(1000000 - 1) + 1;
+		start = System.currentTimeMillis();
+		binomioNewton11.terminoKRecursivo(termino);
+		end = System.currentTimeMillis();
+		System.out.println("terminoKRecursivo() encontro el termino " + termino + "en : " + (end - start) + " milisegundos.");
+
+		System.out.println();
+		
+		// Desarrollo completo (ITERATIVO)
 
 		start = System.currentTimeMillis();
 		binomioNewton1.desarrolloCompleto();
@@ -488,6 +558,76 @@ public class RendimientoTest {
 		end = System.currentTimeMillis();
 		System.out.println(
 				"desarrolloCompleto() " + binomioNewton11.getN() + " en : " + (end - start) + " milisegundos.");
+
+		System.out.println();
+		
+		// Desarrollo completo (Recursivo)
+		
+		start = System.currentTimeMillis();
+		binomioNewton1.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton1.getN() + "en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton2.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton2.getN() + "en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton3.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton2.getN() + "en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton4.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton4.getN() + " en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton5.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton5.getN() + " en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton6.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton6.getN() + " en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton7.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton7.getN() + " en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton8.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton8.getN() + " en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton9.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out
+				.println("desarrolloCompletoRecursivo() " + binomioNewton9.getN() + " en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton10.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out.println(
+				"desarrolloCompletoRecursivo() " + binomioNewton10.getN() + " en : " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		binomioNewton11.desarrolloCompletoRecursivo();
+		end = System.currentTimeMillis();
+		System.out.println(
+				"desarrolloCompletoRecursivo() " + binomioNewton11.getN() + " en : " + (end - start) + " milisegundos.");
 
 		System.out.println();
 	}

@@ -16,10 +16,11 @@ public class UtilitarioTest {
     }
 
     @Test
-    public void combinatoriaTest() {
-        Assert.assertEquals(Utilitario.combinatoria(6, 0), 1);
-        Assert.assertEquals(Utilitario.combinatoria(6, 1), 6);
-        Assert.assertEquals(Utilitario.combinatoria(6, 2), 15);
+    public void combinatoriaRecursivaTest() {
+        Assert.assertEquals(Utilitario.combinatoriaRecursiva(6, 0), 1);
+        Assert.assertEquals(Utilitario.combinatoriaRecursiva(6, 1), 6);
+        Assert.assertEquals(Utilitario.combinatoriaRecursiva(6, 2), 15);
+        Assert.assertEquals(Utilitario.combinatoriaRecursiva(6, 6), 1);
 
     }
 
