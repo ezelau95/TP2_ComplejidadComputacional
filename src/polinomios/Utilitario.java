@@ -21,6 +21,24 @@ public class Utilitario {
         }
         return f;
     }
+    
+    public int combinatoriaSinFactorial(int m, int c) {
+		int n=0,p=0,aux=m-c;
+		for (int i = 2; i <= m; i++) {
+			n *= i;
+		}
+		
+		for (int i = 2; i <= c; i++) {
+			p *= i;
+		}
+		
+		for (int i=2; i<aux;i++) {
+			aux*=i;
+		}
+		if(p==0 || aux==0)
+			return 0;
+		return n/p*aux;
+	}
 
     public static double potencia(double x, int n) {
         if (n > 1)
