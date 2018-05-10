@@ -22,4 +22,20 @@ public class Utilitario {
         else
             return 1;
     }
+    
+    public static double potenciaParImpar(double x, int n) {
+
+		if (n > 1) {
+			if (n % 2 == 0) {
+				return potenciaParImpar(x * x, n / 2);
+			} else {
+				return x * potenciaParImpar(x, n - 1);
+			}
+		} else if (n == 1) {
+			return x;
+		} else {
+			return 1;
+		}
+	}
+
 }

@@ -43,18 +43,9 @@ public class Polinomio {
 	public synchronized double evaluarRecursiva(double x) {
 		double resultado = 0;
 		for (int i = 0; i < this.grado; i++) {
-			resultado += this.coeficientes[i] * this.potencia(x, this.grado - i);
+			resultado += this.coeficientes[i] * Utilitario.potencia(x, this.grado - i);
 		}
 		return resultado;
-	}
-
-	private double potencia(double x, int n) {
-		if (n > 1)
-			return x * potencia(x, n - 1);
-		else if (n == 1)
-			return x;
-		else
-			return 1;
 	}
 
 	/**
@@ -68,26 +59,11 @@ public class Polinomio {
 	public double evaluarRecursivaPar(double x) {
 		double resultado = 0;
 		for (int i = 0; i <= this.grado; i++) {
-			resultado += this.coeficientes[i] * potenciaParImpar(x, this.grado - i);
+			resultado += this.coeficientes[i] * Utilitario.potenciaParImpar(x, this.grado - i);
 		}
 		return resultado;
 	}
-
-	private double potenciaParImpar(double x, int n) {
-
-		if (n > 1) {
-			if (n % 2 == 0) {
-				return potenciaParImpar(x * x, n / 2);
-			} else {
-				return x * potenciaParImpar(x, n - 1);
-			}
-		} else if (n == 1) {
-			return x;
-		} else {
-			return 1;
-		}
-	}
-
+	
 	public double evaluarHorner(double x) {
 		double result = 0;
 		for (int i = grado - 1; i >= 0; i--)

@@ -6,17 +6,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class RendimientoTest {
-	private Polinomio pol1;
-	private Polinomio pol2;
-	private Polinomio pol3;
-	private Polinomio pol4;
-	private Polinomio pol5;
-	private Polinomio pol6;
-	private Polinomio pol7;
-	private Polinomio pol8;
-	private Polinomio pol9;
-	private Polinomio pol10;
-	private Polinomio pol11;
+	private Polinomio pol1, pol2, pol3, pol4, pol5, pol6, pol7, pol8, pol9, pol10, pol11;
+
 	private BinomioDeNewton binomioNewton1, binomioNewton2, binomioNewton3, binomioNewton4, binomioNewton5,
 			binomioNewton6, binomioNewton7, binomioNewton8, binomioNewton9, binomioNewton10, binomioNewton11;
 
@@ -291,8 +282,77 @@ public class RendimientoTest {
 
 		// Test de binomio de Newton
 
-		int termino = 0;
+	}
 
+	public void testRendimientoHorner() {
+
+		long start = System.currentTimeMillis();
+		pol1.evaluarHorner(2);
+		long end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol1.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol2.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol2.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol3.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol3.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol4.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol4.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol5.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol5.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol6.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol6.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol7.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol7.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol8.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol8.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol9.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out.println("evaluarHorner polinomio grado " + pol9.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol10.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out
+				.println("evaluarHorner polinomio grado " + pol10.getGrado() + " " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol11.evaluarHorner(2);
+		end = System.currentTimeMillis();
+		System.out
+				.println("evaluarHorner polinomio grado " + pol11.getGrado() + " " + (end - start) + " milisegundos.");
+
+		System.out.println();
+	}
+
+	public void testRendimientoBinomioNewton() {
+		int termino = 0;
+		long start = 0L;
+		long end = 0L;
+
+		// Termino K
+		
 		termino = r.nextInt(100 - 1);
 		start = System.currentTimeMillis();
 		binomioNewton1.terminoK(termino);
@@ -361,7 +421,7 @@ public class RendimientoTest {
 
 		System.out.println();
 
-		// -----------------------------------------------------
+		// Desarrollo completo
 
 		start = System.currentTimeMillis();
 		binomioNewton1.desarrolloCompleto();
@@ -436,6 +496,8 @@ public class RendimientoTest {
 
 		RendimientoTest t = new RendimientoTest();
 
-		t.testRendimiento();
+		// t.testRendimiento();
+		t.testRendimientoHorner();
+		t.testRendimientoBinomioNewton();
 	}
 }
