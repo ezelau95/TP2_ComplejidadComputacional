@@ -68,56 +68,51 @@ public class Utilitario {
 		}
 	}
 
-	public static long trianguloDePascal(int nfilas, int m) {
+	public static long combinatoriaSinRecursiva(int m, int c) {
+		int n = 0, p = 0, aux = m - c;
+		for (int i = 2; i <= m; i++) {
+			n *= i;
+		}
+
+		for (int i = 2; i <= c; i++) {
+			p *= i;
+		}
+
+		for (int i = m - c; i > 0; i--) {
+			if (m - c == 0 || m - c == 1) {
+				aux = 1;
+				break;
+			}
+			aux *= i;
+		}
+		if (p == 0 || aux == 0)
+			return 0;
+		return n / p * aux;
+	}
+
+	public static int combinatoriaMejorada(int nfilas, int m) {
 
 		int combinatoria = 0;
-		//int[] a = new int[1];
-		
-		int[][] triangulo = new int[nfilas + 1][nfilas + 1];
-		int i;
-		for (i = 0; i < nfilas; i++) {
-			triangulo[i][i] = 1;
-			triangulo[i][0] = 1;
-		}
-		
-		for (int j = 0; j < i; j++) {
-			if (j == 0 || j == (i - 1)) {
-				triangulo[i][j] = 1;
-			} else {
-				triangulo[i][j] = triangulo[i - 1][j - 1] + triangulo[i - 1][j];
+		int[] a = new int[1];
+
+		for (int i = 0; i <= nfilas + 1; i++) {
+			int[] x = new int[i];
+			for (int j = 0; j < i; j++) {
+				if (j == 0 || j == (i - 1)) {
+					x[j] = 1;
+				} else {
+					x[j] = a[j] + a[j - 1];
+				}
+				// System.out.print(x[j] + " ");
+
 			}
-			System.out.print(triangulo[i][j] + " ");
-
+			// System.out.println();
+			if (i == nfilas + 1) {
+				combinatoria = x[m];
+			}
+			a = x;
 		}
-		
-		if (i == nfilas) {
-			combinatoria = triangulo[i][m];
-		}
-
-		System.out.println();
-
 		return combinatoria;
 	}
-	
-	
-//	public static long combDinamica(int nfilas, int m) {
-//
-//        //int nfilas = 10;
-//        int[] a = new int[1];
-//        for (int i = 1; i <= nfilas; i++) {
-//            int[] x = new int[i];
-//            for (int j = 0; j < i; j++) {
-//                if (j == 0 || j == (i - 1)) {
-//                    x[j] = 1;
-//                } else {
-//                    x[j] = a[j] + a[j - 1];
-//                }
-//                System.out.print(x[j] + " ");
-//            }
-//            a = x;
-//            System.out.println();
-//        }
-//    
-//	}
 
 }

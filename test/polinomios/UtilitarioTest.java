@@ -29,6 +29,14 @@ public class UtilitarioTest {
         Assert.assertEquals(Utilitario.combinatoria(6, 2), 15);
         Assert.assertEquals(Utilitario.combinatoria(6, 6), 1);
     }
+    
+//    @Test
+//    public void combinatoriaSinRecursividadTest() {
+//        Assert.assertEquals(Utilitario.combinatoriaSinRecursiva(6, 0), 1);
+//        Assert.assertEquals(Utilitario.combinatoriaSinRecursiva(6, 1), 6);
+//        Assert.assertEquals(Utilitario.combinatoriaSinRecursiva(6, 2), 15);
+//        Assert.assertEquals(Utilitario.combinatoriaSinRecursiva(6, 6), 1);
+//    }
 
     @Test
     public void potenciaTest(){
@@ -44,7 +52,15 @@ public class UtilitarioTest {
         Assert.assertEquals(Math.pow(-17, 13), Utilitario.potenciaParImpar(-17, 13), 100000000);
     }
     
-
+    @Test
+    public void combinatoriaTrianguloPascalTest(){
+        
+    	Assert.assertEquals(Utilitario.combinatoriaMejorada(6, 0), 1);
+    	Assert.assertEquals(Utilitario.combinatoriaMejorada(3, 2),3);
+    	Assert.assertEquals(Utilitario.combinatoriaMejorada(4, 2),6);
+    	Assert.assertEquals(Utilitario.combinatoriaMejorada(6, 2),15);
+    	Assert.assertEquals(Utilitario.combinatoriaMejorada(6, 5),6);
+    }
 	
 
 }
