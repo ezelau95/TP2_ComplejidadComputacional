@@ -68,7 +68,53 @@ public class PolinomioTest {
 	}
 
 	@Test
+	public void evaluarPowTest() {
+		double resultado = pol1.evaluarPow(1);
+		Assert.assertEquals(5, resultado, 0);
+
+		resultado = pol1.evaluarPow(2);
+		Assert.assertEquals(31, resultado, 0);
+
+		resultado = pol1.evaluarPow(3);
+		double resultadoEsperado = Math.pow(3, 4) + Math.pow(3, 3) + Math.pow(3, 2) + Math.pow(3, 1) + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
+
+		resultado = pol2.evaluarPow(3);
+		resultadoEsperado = Math.pow(3, 4) * 2 + Math.pow(3, 3) * 2 + Math.pow(3, 2) * 2 + Math.pow(3, 1) * 2 + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
+	}
+	
+	@Test
 	public void evaluarHornerTest() {
-		// TODO: Generar test y revisar logica
+		double resultado = pol1.evaluarHorner(1);
+		Assert.assertEquals(5, resultado, 0);
+
+		resultado = pol1.evaluarHorner(2);
+		Assert.assertEquals(31, resultado, 0);
+
+		resultado = pol1.evaluarHorner(3);
+		double resultadoEsperado = Math.pow(3, 4) + Math.pow(3, 3) + Math.pow(3, 2) + Math.pow(3, 1) + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
+
+		resultado = pol2.evaluarHorner(3);
+		resultadoEsperado = Math.pow(3, 4) * 2 + Math.pow(3, 3) * 2 + Math.pow(3, 2) * 2 + Math.pow(3, 1) * 2 + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
+	}
+	
+	@Test
+	public void evaluarProgDinamicaTest() {
+		double resultado = pol1.evaluarProgDinamica(1);
+		Assert.assertEquals(5, resultado, 0);
+
+		resultado = pol1.evaluarProgDinamica(2);
+		Assert.assertEquals(31, resultado, 0);
+
+		resultado = pol1.evaluarProgDinamica(3);
+		double resultadoEsperado = Math.pow(3, 4) + Math.pow(3, 3) + Math.pow(3, 2) + Math.pow(3, 1) + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
+
+		resultado = pol2.evaluarProgDinamica(3);
+		resultadoEsperado = Math.pow(3, 4) * 2 + Math.pow(3, 3) * 2 + Math.pow(3, 2) * 2 + Math.pow(3, 1) * 2 + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
 	}
 }
