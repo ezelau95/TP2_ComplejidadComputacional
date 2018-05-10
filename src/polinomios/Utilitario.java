@@ -8,14 +8,14 @@ public class Utilitario {
          return combinatoriaRecursiva(n - 1, k - 1) + combinatoriaRecursiva(n - 1, k);
     }
     
-    public static int combinatoria(int n, int k) {
+    public static long combinatoria(int n, int k) {
    	 	if (n >= 0 && k == 0) return 1;
         if (k >= 0 && n == 0) return 0;
         return factorial(n) / (factorial(n - k) * factorial(k));
    }
 
-    public static int factorial(int n) {
-        int f = 1;
+    public static long factorial(int n) {
+        long f = 1;
         for (int i = 2; i <= n; i++) {
             f *= i;
         }
