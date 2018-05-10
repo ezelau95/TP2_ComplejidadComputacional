@@ -117,4 +117,22 @@ public class PolinomioTest {
 		resultadoEsperado = Math.pow(3, 4) * 2 + Math.pow(3, 3) * 2 + Math.pow(3, 2) * 2 + Math.pow(3, 1) * 2 + 1;
 		Assert.assertEquals(resultadoEsperado, resultado, 2);
 	}
+	
+	
+	@Test
+	public void evaluarMejoradaTest() {
+		double resultado = pol1.evaluarMejorada(1);
+		Assert.assertEquals(5, resultado, 0);
+		
+		resultado = pol1.evaluarMejorada(2);
+		Assert.assertEquals(31, resultado, 0);
+
+		resultado = pol1.evaluarMejorada(3);
+		double resultadoEsperado = Math.pow(3, 4) + Math.pow(3, 3) + Math.pow(3, 2) + Math.pow(3, 1) + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
+
+		resultado = pol2.evaluarMejorada(3);
+		resultadoEsperado = Math.pow(3, 4) * 2 + Math.pow(3, 3) * 2 + Math.pow(3, 2) * 2 + Math.pow(3, 1) * 2 + 1;
+		Assert.assertEquals(resultadoEsperado, resultado, 2);
+	}
 }

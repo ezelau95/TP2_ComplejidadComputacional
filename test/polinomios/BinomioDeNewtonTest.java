@@ -43,6 +43,6 @@ public class BinomioDeNewtonTest {
 
 	@Test
 	public void coeficienteKTest(){
-		//TODO: Generar test y revisar logica
+		
 	}
 }

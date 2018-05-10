@@ -43,4 +43,8 @@ public class UtilitarioTest {
         Assert.assertEquals(Math.pow(5, 10), Utilitario.potenciaParImpar(5, 10), 100000000);
         Assert.assertEquals(Math.pow(-17, 13), Utilitario.potenciaParImpar(-17, 13), 100000000);
     }
+    
+
+	
+
 }

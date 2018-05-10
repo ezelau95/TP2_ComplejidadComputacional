@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * La posicion 0 del arreglo de coeficientes contiene el coeficiente de grado n
- *  y la posicion n contiene al termino independiente.
+ * y la posicion n contiene al termino independiente.
  * 
  *
  */
@@ -14,7 +14,7 @@ public class Polinomio {
 	private double[] valoresDeVariablePorGrado;
 	private Double valorAEvaluar;
 
-	public Polinomio(final double[]  c) {
+	public Polinomio(final double[] c) {
 		coeficientes = c;
 		grado = c.length - 1;
 		valoresDeVariablePorGrado = null;
@@ -22,11 +22,13 @@ public class Polinomio {
 	}
 
 	/**
-	 * Evalua el polinomio calculando las potencias del mismo aplicando multiplicaciones sucesivas
+	 * Evalua el polinomio calculando las potencias del mismo aplicando
+	 * multiplicaciones sucesivas
 	 * 
 	 * Complejidad O(f(n^2))
 	 * 
-	 * @param x numero con el cual se va a evaluar el polinomio
+	 * @param x
+	 *            numero con el cual se va a evaluar el polinomio
 	 * @return resultado del polinomio
 	 */
 	public synchronized double evaluarMSucesivas(double x) {
@@ -48,7 +50,8 @@ public class Polinomio {
 	 * Evalua el polinomio de manera recursiva Sin considerar si el exponente es par
 	 * o impar. Complejidad O(f(n^2*2^n))
 	 *
-	 * @param x numero con el cual se va a evaluar el polinomio
+	 * @param x
+	 *            numero con el cual se va a evaluar el polinomio
 	 * @return el resultado del polinomio
 	 */
 	public synchronized double evaluarRecursiva(double x) {
@@ -63,8 +66,9 @@ public class Polinomio {
 	 * Evalua el polinomio de manera recursiva considerando si el exponente es par o
 	 * impar.Complejidad O(f(n^2*2^n*log*n))
 	 *
-	 * @param 	x numero con el cual se va a evaluar el polinomio
-	 * @return	el resultado del polinomio
+	 * @param x
+	 *            numero con el cual se va a evaluar el polinomio
+	 * @return el resultado del polinomio
 	 */
 	public double evaluarRecursivaPar(double x) {
 		double resultado = 0;
@@ -74,78 +78,113 @@ public class Polinomio {
 		return resultado;
 	}
 
-	 /**
-     *Resuelve un polinomio utilizando la funcion pow de la biblioteca Math.
-     *
-     * Complejidad O(f(n))
-     *
-     * @param x numero con el cual se va a evaluar el polinomio
-     * @return 	el resultado del polinomio
-     */
+	/**
+	 * Resuelve un polinomio utilizando la funcion pow de la biblioteca Math.
+	 *
+	 * Complejidad O(f(n))
+	 *
+	 * @param x
+	 *            numero con el cual se va a evaluar el polinomio
+	 * @return el resultado del polinomio
+	 */
 	public double evaluarPow(double x) {
 		double resultado = 0;
 		for (int i = 0; i <= this.grado; i++)
 			resultado += this.coeficientes[i] * Math.pow(x, this.grado - i);
-		System.out.println(resultado);
+
 		return resultado;
 	}
-	
+
 	/**
 	 * Resuelve un polinomio aplicando el algoritmo de Horner de analisis numerico
-     *
-     * Complejidad O(f(n))
-     * 
-     * @param x numero con el cual se va a evaluar el polinomio
-     * @return 	el resultado del polinomio
-     */
+	 *
+	 * Complejidad O(f(n))
+	 * 
+	 * @param x
+	 *            numero con el cual se va a evaluar el polinomio
+	 * @return el resultado del polinomio
+	 */
 	public double evaluarHorner(double x) {
 		double resultado = this.coeficientes[0];
+
 		for (int i = 1; i <= this.grado; i++) {
 			resultado = this.coeficientes[i] + resultado * x;
 		}
+
 		return resultado;
-       
-    }
-	
+	}
+
 	/**
-	 * Evalua el polinomio realizando el calculo de las potencias de la variable de forma dinamica,
-	 * obtiene el valor del la proxima potencia en base a la anterior
+	 * Evalua el polinomio realizando el calculo de las potencias de la variable de
+	 * forma dinamica, obtiene el valor del la proxima potencia en base a la
+	 * anterior
 	 * 
 	 * Complejidad O(f(n))
 	 * 
-	 * @param x numero con el cual se va a evaluar el polinomio
-     * @return 	el resultado del polinomio
+	 * @param x
+	 *            numero con el cual se va a evaluar el polinomio
+	 * @return el resultado del polinomio
 	 */
 	public double evaluarProgDinamica(double x) {
-		
-		//inicializo en termino independiente
+
+		// inicializo en termino independiente
 		double resultado = coeficientes[grado];
-		
+
 		if (valorAEvaluar == null || x != valorAEvaluar) {
 			valorAEvaluar = x;
-			//La posicion 0 del vector tiene el calculo de x^n, siendo n el grado
+			// La posicion 0 del vector tiene el calculo de x^n, siendo n el grado
 			valoresDeVariablePorGrado = new double[grado];
 			if (valorAEvaluar == 0) {
 				return resultado;
 			}
-			//Completo el ultimo valor con x^1
-			valoresDeVariablePorGrado[grado-1] = x;
+			// Completo el ultimo valor con x^1
+			valoresDeVariablePorGrado[grado - 1] = x;
 		}
-		
-		//cargo vector con valores de la variable en todos sus grados
-		for (int i = grado-2; i >= 0; i--) {
+
+		// cargo vector con valores de la variable en todos sus grados
+		for (int i = grado - 2; i >= 0; i--) {
 			if (valoresDeVariablePorGrado[i] == 0) {
-				valoresDeVariablePorGrado[i] = valorAEvaluar * valoresDeVariablePorGrado[i+1];
+				valoresDeVariablePorGrado[i] = valorAEvaluar * valoresDeVariablePorGrado[i + 1];
 			}
 		}
-		
+
 		for (int i = 0; i < grado; i++) {
 			resultado += coeficientes[i] * valoresDeVariablePorGrado[i];
 		}
-		
+
 		return resultado;
 	}
 
+	public double evaluarMejorada(double param) {
+		double resultado = coeficientes[grado];
+		double n = param;
+		for (int i = grado - 1; i >= 0; i--) {
+			resultado += coeficientes[i] * n;
+			n *= param;
+		}
+		return resultado;
+	}
+
+	public void trianguloTrianguloT(int nfilas, int m) {
+
+		int combinatoria = 0;
+		int[] a = new int[1];
+		for (int i = 0; i <= nfilas; i++) {
+			int[] x = new int[i];
+			for (int j = 0; j < i; j++) {
+				if (j == 0 || j == (i - 1)) {
+					x[j] = 1;
+				} else {
+					x[j] = a[j] + a[j - 1];
+				}
+				System.out.print(x[j] + " ");
+
+			}
+			if (i == nfilas)
+				combinatoria = x[m];
+			a = x;
+		}
+	}
 
 	@Override
 	public boolean equals(Object o) {
