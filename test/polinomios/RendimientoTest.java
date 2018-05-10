@@ -40,241 +40,219 @@ public class RendimientoTest {
 		binomioNewton11 = new BinomioDeNewton(r.nextInt(100 - (-100)) + (-100), r.nextInt(100 - (-100)) + (-100), 43);
 	}
 
-	public void testRendimiento() {
+	public void testRendimientoMSucesivas() {
 
 		long start = System.currentTimeMillis();
 		pol1.evaluarMSucesivas(2);
 		long end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarMSucesivas polinomio grado " + pol1.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol1.evaluarRecursiva(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursiva polinomio grado " + pol1.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol1.evaluarRecursivaPar(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursivaPar polinomio grado " + pol1.getGrado() + " " + (end - start) + " milisegundos.");
-
-		System.out.println();
+				"evaluarMSucesivas polinomio grado " + pol1.getGrado() + " tardó: " + (end - start) + " milisegundos.");
 
 		start = System.currentTimeMillis();
 		pol2.evaluarMSucesivas(2);
 		end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarMSucesivas polinomio grado " + pol2.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol2.evaluarRecursiva(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursiva polinomio grado " + pol2.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol2.evaluarRecursivaPar(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursivaPar polinomio grado " + pol2.getGrado() + " " + (end - start) + " milisegundos.");
-
-		System.out.println();
+				"evaluarMSucesivas polinomio grado " + pol2.getGrado() + " tardó: " + (end - start) + " milisegundos.");
 
 		start = System.currentTimeMillis();
 		pol3.evaluarMSucesivas(2);
 		end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarMSucesivas polinomio grado " + pol3.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol3.evaluarRecursiva(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursiva polinomio grado " + pol3.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol3.evaluarRecursivaPar(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursivaPar polinomio grado " + pol3.getGrado() + " " + (end - start) + " milisegundos.");
-
-		System.out.println();
+				"evaluarMSucesivas polinomio grado " + pol3.getGrado() + " tardó: " + (end - start) + " milisegundos.");
 
 		start = System.currentTimeMillis();
 		pol4.evaluarMSucesivas(2);
 		end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarMSucesivas polinomio grado " + pol4.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol4.evaluarRecursiva(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursiva polinomio grado " + pol4.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol4.evaluarRecursivaPar(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursivaPar polinomio grado " + pol4.getGrado() + " " + (end - start) + " milisegundos.");
-
-		System.out.println();
+				"evaluarMSucesivas polinomio grado " + pol4.getGrado() + " tardó: " + (end - start) + " milisegundos.");
 
 		start = System.currentTimeMillis();
 		pol5.evaluarMSucesivas(2);
 		end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarMSucesivas polinomio grado " + pol5.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol5.evaluarRecursiva(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursiva polinomio grado " + pol5.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol5.evaluarRecursivaPar(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursivaPar polinomio grado " + pol5.getGrado() + " " + (end - start) + " milisegundos.");
-
-		System.out.println();
+				"evaluarMSucesivas polinomio grado " + pol5.getGrado() + " tardó: " + (end - start) + " milisegundos.");
 
 		start = System.currentTimeMillis();
 		pol6.evaluarMSucesivas(2);
 		end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarMSucesivas polinomio grado " + pol6.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol6.evaluarRecursiva(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursiva polinomio grado " + pol6.getGrado() + " " + (end - start) + " milisegundos.");
-
-		start = System.currentTimeMillis();
-		pol6.evaluarRecursivaPar(2);
-		end = System.currentTimeMillis();
-		System.out.println(
-				"evaluarRecursivaPar polinomio grado " + pol6.getGrado() + " " + (end - start) + " milisegundos.");
-
-		System.out.println();
+				"evaluarMSucesivas polinomio grado " + pol6.getGrado() + " tardó: " + (end - start) + " milisegundos.");
 
 		start = System.currentTimeMillis();
 		pol7.evaluarMSucesivas(2);
 		end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarMSucesivas polinomio grado " + pol7.getGrado() + " " + (end - start) + " milisegundos.");
+				"evaluarMSucesivas polinomio grado " + pol7.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol8.evaluarMSucesivas(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarMSucesivas polinomio grado " + pol8.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol9.evaluarMSucesivas(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarMSucesivas polinomio grado " + pol9.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol10.evaluarMSucesivas(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarMSucesivas polinomio grado " + pol10.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol11.evaluarMSucesivas(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarMSucesivas polinomio grado " + pol11.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		System.out.println();
+
+	}
+
+	public void testRendimientoRecursiva() {
+
+		long start = System.currentTimeMillis();
+		pol1.evaluarRecursiva(2);
+		long end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol1.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol2.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol2.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol3.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol3.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol4.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol4.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol5.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol5.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol6.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol6.getGrado() + " tardó: " + (end - start) + " milisegundos.");
 
 		start = System.currentTimeMillis();
 		pol7.evaluarRecursiva(2);
 		end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarRecursiva polinomio grado " + pol7.getGrado() + " " + (end - start) + " milisegundos.");
+				"evaluarRecursiva polinomio grado " + pol7.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol8.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol8.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol9.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol9.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol10.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol10.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol11.evaluarRecursiva(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursiva polinomio grado " + pol11.getGrado() + " tardó: " + (end - start) + " milisegundos.");
+
+		System.out.println();
+
+	}
+
+	public void testRendimientoRecursivaPar() {
+
+		long start = System.currentTimeMillis();
+		pol1.evaluarRecursivaPar(2);
+		long end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol1.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol2.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol2.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol3.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol3.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol4.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol4.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol5.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol5.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol6.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol6.getGrado() + ": " + (end - start) + " milisegundos.");
 
 		start = System.currentTimeMillis();
 		pol7.evaluarRecursivaPar(2);
 		end = System.currentTimeMillis();
 		System.out.println(
-				"evaluarRecursivaPar polinomio grado " + pol7.getGrado() + " " + (end - start) + " milisegundos.");
+				"evaluarRecursivaPar polinomio grado " + pol7.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol8.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol8.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol9.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol9.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol10.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol10.getGrado() + ": " + (end - start) + " milisegundos.");
+
+		start = System.currentTimeMillis();
+		pol11.evaluarRecursivaPar(2);
+		end = System.currentTimeMillis();
+		System.out.println(
+				"evaluarRecursivaPar polinomio grado " + pol11.getGrado() + ": " + (end - start) + " milisegundos.");
 
 		System.out.println();
-
-		// start = System.currentTimeMillis();
-		// pol8.evaluarMSucesivas(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarMSucesivas polinomio grado " + pol8.getGrado() + " " + (end - start)
-		// + " milisegundos.");
-		//
-		// start = System.currentTimeMillis();
-		// pol8.evaluarRecursiva(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarRecursiva polinomio grado " + pol8.getGrado() + " " + (end - start) +
-		// " milisegundos.");
-		//
-		// start = System.currentTimeMillis();
-		// pol8.evaluarRecursivaPar(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarRecursivaPar polinomio grado " + pol8.getGrado() + " " + (end -
-		// start) + " milisegundos.");
-		//
-		// System.out.println();
-		//
-		// start = System.currentTimeMillis();
-		// pol9.evaluarMSucesivas(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarMSucesivas polinomio grado " + pol9.getGrado() + " " + (end - start)
-		// + " milisegundos.");
-		//
-		// start = System.currentTimeMillis();
-		// pol9.evaluarRecursiva(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarRecursiva polinomio grado " + pol9.getGrado() + " " + (end - start) +
-		// " milisegundos.");
-		//
-		// start = System.currentTimeMillis();
-		// pol9.evaluarRecursivaPar(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarRecursivaPar polinomio grado " + pol9.getGrado() + " " + (end -
-		// start) + " milisegundos.");
-		//
-		// System.out.println();
-		//
-		// start = System.currentTimeMillis();
-		// pol10.evaluarMSucesivas(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarMSucesivas polinomio grado " + pol10.getGrado() + " " + (end - start)
-		// + " milisegundos.");
-		//
-		// start = System.currentTimeMillis();
-		// pol10.evaluarRecursiva(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarRecursiva polinomio grado " + pol10.getGrado() + " " + (end - start)
-		// + " milisegundos.");
-		//
-		// start = System.currentTimeMillis();
-		// pol10.evaluarRecursivaPar(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarRecursivaPar polinomio grado " + pol10.getGrado() + " " + (end -
-		// start) + " milisegundos.");
-		//
-		// System.out.println();
-		//
-		// start = System.currentTimeMillis();
-		// pol11.evaluarMSucesivas(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarMSucesivas polinomio grado " + pol11.getGrado() + " " + (end - start)
-		// + " milisegundos.");
-		//
-		// start = System.currentTimeMillis();
-		// pol11.evaluarRecursiva(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarRecursiva polinomio grado " + pol11.getGrado() + " " + (end - start)
-		// + " milisegundos.");
-		//
-		// start = System.currentTimeMillis();
-		// pol11.evaluarRecursivaPar(2);
-		// end = System.currentTimeMillis();
-		// System.out.println(
-		// "evaluarRecursivaPar polinomio grado " + pol11.getGrado() + " " + (end -
-		// start) + " milisegundos.");
-		//
-		// System.out.println();
-
-		// Test de binomio de Newton
 
 	}
 
@@ -641,8 +619,9 @@ public class RendimientoTest {
 
 		RendimientoTest t = new RendimientoTest();
 
-		// t.testRendimiento();
-		//t.testRendimientoHorner();
-		t.testRendimientoBinomioNewton();
+		 t.testRendimientoMSucesivas();
+		 t.testRendimientoRecursivaPar();
+		// t.testRendimientoHorner();
+		//t.testRendimientoBinomioNewton();
 	}
 }
