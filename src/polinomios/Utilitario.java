@@ -18,78 +18,6 @@ public class Utilitario {
 		return factorial(n) / (factorial(n - k) * factorial(k));
 	}
 
-	public static long factorial(int n) {
-		long f = 1;
-		for (int i = 2; i <= n; i++) {
-			f *= i;
-		}
-		return f;
-	}
-
-	public int combinatoriaSinFactorial(int m, int c) {
-		int n = 0, p = 0, aux = m - c;
-		for (int i = 2; i <= m; i++) {
-			n *= i;
-		}
-
-		for (int i = 2; i <= c; i++) {
-			p *= i;
-		}
-
-		for (int i = 2; i < aux; i++) {
-			aux *= i;
-		}
-		if (p == 0 || aux == 0)
-			return 0;
-		return n / p * aux;
-	}
-
-	public static double potencia(double x, int n) {
-		if (n > 1)
-			return x * potencia(x, n - 1);
-		else if (n == 1)
-			return x;
-		else
-			return 1;
-	}
-
-	public static double potenciaParImpar(double x, int n) {
-
-		if (n > 1) {
-			if (n % 2 == 0) {
-				return potenciaParImpar(x * x, n / 2);
-			} else {
-				return x * potenciaParImpar(x, n - 1);
-			}
-		} else if (n == 1) {
-			return x;
-		} else {
-			return 1;
-		}
-	}
-
-	public static long combinatoriaSinRecursiva(int m, int c) {
-		int n = 0, p = 0, aux = m - c;
-		for (int i = 2; i <= m; i++) {
-			n *= i;
-		}
-
-		for (int i = 2; i <= c; i++) {
-			p *= i;
-		}
-
-		for (int i = m - c; i > 0; i--) {
-			if (m - c == 0 || m - c == 1) {
-				aux = 1;
-				break;
-			}
-			aux *= i;
-		}
-		if (p == 0 || aux == 0)
-			return 0;
-		return n / p * aux;
-	}
-
 	public static int combinatoriaMejorada(int nfilas, int m) {
 
 		int combinatoria = 0;
@@ -115,4 +43,36 @@ public class Utilitario {
 		return combinatoria;
 	}
 
+
+	public static long factorial(int n) {
+		long f = 1;
+		for (int i = 2; i <= n; i++) {
+			f *= i;
+		}
+		return f;
+	}
+
+	public static double potencia(double x, int n) {
+		if (n > 1)
+			return x * potencia(x, n - 1);
+		else if (n == 1)
+			return x;
+		else
+			return 1;
+	}
+
+	public static double potenciaParImpar(double x, int n) {
+
+		if (n > 1) {
+			if (n % 2 == 0) {
+				return potenciaParImpar(x * x, n / 2);
+			} else {
+				return x * potenciaParImpar(x, n - 1);
+			}
+		} else if (n == 1) {
+			return x;
+		} else {
+			return 1;
+		}
+	}
 }

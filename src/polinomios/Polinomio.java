@@ -165,27 +165,6 @@ public class Polinomio {
 		return resultado;
 	}
 
-	public void trianguloTrianguloT(int nfilas, int m) {
-
-		int combinatoria = 0;
-		int[] a = new int[1];
-		for (int i = 0; i <= nfilas; i++) {
-			int[] x = new int[i];
-			for (int j = 0; j < i; j++) {
-				if (j == 0 || j == (i - 1)) {
-					x[j] = 1;
-				} else {
-					x[j] = a[j] + a[j - 1];
-				}
-				System.out.print(x[j] + " ");
-
-			}
-			if (i == nfilas)
-				combinatoria = x[m];
-			a = x;
-		}
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)

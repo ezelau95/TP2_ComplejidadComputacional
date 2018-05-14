@@ -27,22 +27,10 @@ public class BinomioDeNewton {
 
 	/**
 	 * Obtener el termino k del polinomio utilizando el calculo combinatorio
-	 * recursivo
-	 * 
-	 * Complejidad
-	 * 
-	 * @param k
-	 *            <code>int</code> el termino a obtener
-	 * @return termino enviado como parametro
-	 */
-	public int terminoKRecursivo(int k) {
-		return (int) (Utilitario.combinatoriaRecursiva(n, k) * Math.pow(a, k) * Math.pow(b, n - k));
-	}
-
-	/**
-	 * Obtener el termino k del polinomio utilizando el calculo combinatorio
 	 * iterativo
-	 * 
+	 *
+	 * Complejidad
+	 *
 	 * @param k
 	 *            <code>int</code> el termino a obtener
 	 * @return termino enviado como parametro
@@ -52,8 +40,24 @@ public class BinomioDeNewton {
 	}
 
 	/**
+	 * Obtener el termino k del polinomio utilizando el calculo combinatorio
+	 * recursivo
+	 *
+	 * Complejidad
+	 *
+	 * @param k
+	 *            <code>int</code> el termino a obtener
+	 * @return termino enviado como parametro
+	 */
+	public int terminoKRecursivo(int k) {
+		return (int) (Utilitario.combinatoriaRecursiva(n, k) * Math.pow(a, k) * Math.pow(b, n - k));
+	}
+
+	/**
 	 * Obtener el termino k del polinomio utilizando el triangulo de Tartaglia
-	 * 
+	 *
+	 * Complejidad
+	 *
 	 * @param k
 	 *            <code>int</code> el termino a obtener
 	 * @return termino enviado como parametro
