@@ -15,7 +15,7 @@ public class Polinomio {
 	private Double valorAEvaluar;
 
 	public Polinomio(final double[]  c) {
-		coeficientes = c;
+		coeficientes = c.clone();
 		grado = c.length - 1;
 		valoresDeVariablePorGrado = null;
 		valorAEvaluar = null;
